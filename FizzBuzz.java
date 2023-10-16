@@ -1,21 +1,24 @@
 public class FizzBuzz {
 
-    public static void fizzBuzz(int n) {
-        for (int i = 1; i <= n; i++) {
-            if (i % 3 == 0 && i % 5 == 0)
+    public static int fizzBuzz(int n) {
+        if (n == 1) {
+            return 1;
+        } else {
+            if (n % 3 == 0 && n % 5 == 0)
                 System.out.println("FizzBuzz");
-            else if (i % 3 == 0)
+            else if (n % 3 == 0)
                 System.out.println("Fizz");
-            else if (i % 5 == 0)
+            else if (n % 5 == 0)
                 System.out.println("Buzz");
             else
-                System.out.println(i);
+                System.out.println(n);
+            n--;
+            return fizzBuzz(n);
         }
-        System.out.println();
     }
 
     public static void main(String[] args) {
-        fizzBuzz(15);
-        fizzBuzz(30);
+        System.out.print(fizzBuzz(15));
+        // System.out.print(fizzBuzz(30));
     }
 }
